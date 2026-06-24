@@ -1,0 +1,13 @@
+{
+  "name": "rowbase-skills",
+  "version": "0.1.0",
+  "description": "Reusable agent skills for Gabe / Rowbase: spoken/direct writing style, warm-persuasive proposal & exec style, and Ogilvy-inspired copywriting.",
+  "author": {
+    "name": "Gabe Horwitz",
+    "email": "gabe@rowbase.com"
+  },
+  "homepage": "https://github.com/gabehrwitz/rowbase-skills",
+  "repository": "https://github.com/gabehrwitz/rowbase-skills",
+  "license": "MIT",
+  "keywords": ["writing", "proposals", "copywriting", "ogilvy", "exec-comms"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "rowbase-skills",
+  "owner": {
+    "name": "Gabe Horwitz",
+    "email": "gabe@rowbase.com",
+    "url": "https://github.com/gabehrwitz/rowbase-skills"
+  },
+  "metadata": {
+    "description": "Reusable agent skills for Gabe / Rowbase: writing, proposals, and copy.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rowbase-skills",
+      "source": "./",
+      "description": "Spoken/direct writing style, warm-persuasive proposal & exec style, and Ogilvy copywriting.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Gabe Horwitz"
+      },
+      "keywords": ["writing", "proposals", "copywriting", "ogilvy", "exec-comms"]
+    }
+  ]
+}
