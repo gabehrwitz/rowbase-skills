@@ -11,6 +11,7 @@ Works with **OpenClaw** (`npx skills`) and **Claude Code** (plugin marketplace).
 | `writing-style` | Spoken, direct, low-fluff prose. Write like you talk; cut anything that sounds AI-generated. |
 | `rowbase-proposal-style` | Warm, persuasive, specific writing for proposals, exec comms, and client-facing business writing. |
 | `ogilvy-copywriting` | David Ogilvy's advertising principles for copy that sells (MIT, attributed). |
+| `wealth-manager` | Opinionated personal wealth manager — portfolio review, idea evaluation, tax-aware moves, planning. Uses real finances + live market data; enforces risk guardrails. (Apache-2.0, adapted from Anthropic's financial-services-plugins.) |
 
 ## Install on OpenClaw
 
