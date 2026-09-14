@@ -12,6 +12,7 @@ Works with **OpenClaw** (`npx skills`) and **Claude Code** (plugin marketplace).
 | `rowbase-proposal-style` | Warm, persuasive, specific writing for proposals, exec comms, and client-facing business writing. |
 | `ogilvy-copywriting` | David Ogilvy's advertising principles for copy that sells (MIT, attributed). |
 | `wealth-manager` | Opinionated personal wealth manager — portfolio review, idea evaluation, tax-aware moves, planning. Uses real finances + live market data; enforces risk guardrails. (Apache-2.0, adapted from Anthropic's financial-services-plugins.) |
+| `rowbase-source-onboarding` | Checklist for taking a new REST API source (dlt + dbt + Prefect) from fixture-green to its first production backfill: probe with production parameters, model reference objects, never depend on helper endpoints, strict fixture server, retry/schedule settings, .dockerignore allowlist, acceptance window. |
 
 ## Install on OpenClaw
 
