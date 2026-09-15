@@ -11,7 +11,7 @@ description: |
   test races a fixture HTTP server. Distilled from the Crelate onboarding in the Elliot
   Group brain (2026-09-14), where each item cost a failed production run or a review finding.
 author: Claude Code
-version: 1.0.0
+version: 1.1.0
 date: 2026-09-14
 ---
 
@@ -106,6 +106,35 @@ test most often deselected locally and the one CI fails on.
 Freeze the candidate and hold every release until the panel verdict is in. A release
 during an open panel displaces the candidate (`DEPLOY-01`/`CODE-01` fail) and, with
 interval schedules, resets the operating cycle the panel is trying to observe.
+
+### 8. Probe every enum the seeds will map, never trust a fixture's vocabulary
+
+A fixture that invents enum values (string record types such as `Client` and `Equity Group`)
+makes an `unknown_enum` exclusion look correct in every test and catastrophic in production,
+where the source sends a byte code. Before seeding any code-to-class mapping, read the
+entity's `/info` (or schema) endpoint for the field's declared type, sample the live values,
+and try the list filter with the names you plan to seed; a rejected filter value means the
+vocabulary is wrong. Seed only the codes you observed, and never exclude a row for an
+unmapped code: classify structurally (a company Searches reference is a Client; a company
+another company names as parent is an Equity Group) and let an unmapped code publish.
+
+### 9. Let a source publish for the first time through the coverage gate
+
+A coverage gate that compares the candidate's counts with the live publication must tolerate
+two shapes on the live side: a status table that predates a new column (select the column only
+when `information_schema.columns` has it) and a policed metric the live publication never
+carried (a source published for the first time has no floor and is skipped). A candidate that
+lacks a policed metric still blocks. The first Crelate publication failed on both, after dbt
+had already passed.
+
+### 10. Log the safe lines of a failed dbt run from day one
+
+When the flow captures dbt's stdout and raises a sanitized message, an unnamed failure costs a
+release cycle per guess. Log the non-indented lines only: progress (`N of M START|FAIL|ERROR …`),
+dbt's own headings with the parenthesised path cut off, `Done.` (whose counters vary by dbt
+version, so match `(?: [A-Z-]+=\d+)+`), and the class name of a traceback's final exception.
+Name the failed node from its progress line, because dbt prints the detail block only at the
+end. See the `dbt-subprocess-diagnostics` skill.
 
 ## Verification
 
